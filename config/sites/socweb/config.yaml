@@ -1,4 +1,3 @@
-rootPageId: 1
 base: 'https://www.starofcreation.ch'
 baseVariants:
   -
@@ -10,10 +9,17 @@ baseVariants:
 dependencies:
   - typo3/seo-sitemap
   - typo3/redirects
-  - typo3/felogin
-  - typo3/form
   - conpassione/cpdevsite
   - conpassione/soc
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=4'
+  -
+    errorCode: 500
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=5'
 languages:
   -
     languageId: 0
@@ -69,15 +75,7 @@ languages:
     fallbacks: '0'
     enabled: true
     websiteTitle: 'conPassion DevSite'
-errorHandling:
-  -
-    errorCode: 404
-    errorHandler: Page
-    errorContentSource: 't3://page?uid=4'
-  -
-    errorCode: 500
-    errorHandler: Page
-    errorContentSource: 't3://page?uid=5'
+rootPageId: 1
 routeEnhancers:
   PageTypeSuffix:
     type: PageType
@@ -88,4 +86,4 @@ routes:
     route: robots.txt
     type: staticText
     content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nSitemap: https://socweb.ddev.site/sitemap.xml\r\n"
-websiteTitle: CpDevSite
+websiteTitle: 'SOC Web'

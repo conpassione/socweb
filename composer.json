@@ -35,7 +35,6 @@
 		"typo3/cms-filelist": "^13.4",
 		"typo3/cms-filemetadata": "^13.4",
 		"typo3/cms-fluid": "^13.4",
-		"typo3/cms-fluid-styled-content": "^13.4",
 		"typo3/cms-form": "^13.4",
 		"typo3/cms-frontend": "^13.4",
 		"typo3/cms-impexp": "^13.4",
