@@ -1,0 +1,91 @@
+rootPageId: 1
+base: 'https://www.starofcreation.ch'
+baseVariants:
+  -
+    base: 'https://socweb.ddev.site'
+    condition: 'applicationContext == "Development"'
+  -
+    base: 'https://test.starofcreation.ch'
+    condition: 'applicationContext == "Testing"'
+dependencies:
+  - typo3/seo-sitemap
+  - typo3/redirects
+  - typo3/felogin
+  - typo3/form
+  - conpassione/cpdevsite
+  - conpassione/soc
+languages:
+  -
+    languageId: 0
+    title: Deutsch
+    navigationTitle: Deutsch
+    base: /
+    locale: de_CH.UTF-8
+    iso-639-1: de
+    hreflang: de_CH
+    direction: ltr
+    flag: ch
+    enabled: true
+    websiteTitle: 'conPassione | Entwicklungsseite'
+  -
+    languageId: 1
+    title: Français
+    navigationTitle: Franc
+    base: /fr/
+    locale: fr_FR.UTF-8
+    iso-639-1: fr
+    hreflang: fr_FR
+    direction: ltr
+    flag: fr
+    fallbackType: fallback
+    fallbacks: '0'
+    enabled: true
+    websiteTitle: 'conPassione | site de develeopement'
+  -
+    languageId: 2
+    title: Italiano
+    navigationTitle: Italiano
+    base: /it/
+    locale: it_IT.UTF-8
+    iso-639-1: it
+    hreflang: it_IT
+    direction: ltr
+    flag: it
+    fallbackType: fallback
+    fallbacks: '1,0'
+    enabled: true
+    websiteTitle: 'conPassione | sito di sviluppo'
+  -
+    languageId: 3
+    title: English
+    navigationTitle: English
+    base: /en/
+    locale: en_US.UTF-8
+    iso-639-1: en
+    hreflang: en_US
+    direction: ltr
+    flag: gb
+    fallbackType: fallback
+    fallbacks: '0'
+    enabled: true
+    websiteTitle: 'conPassion DevSite'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=4'
+  -
+    errorCode: 500
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=5'
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      sitemap.xml: 1533906435
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nSitemap: https://socweb.ddev.site/sitemap.xml\r\n"
+websiteTitle: CpDevSite
